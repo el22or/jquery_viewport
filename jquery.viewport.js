@@ -34,6 +34,12 @@
 
   $.inviewport = function(element, settings) {
     var $element = $(element);
+
+    // Return false if element is hidden.
+    if (!$element.is(':visible')) {
+      return false;
+    }
+
     var offset = $element.offset();
 
     var $window = $(window);
